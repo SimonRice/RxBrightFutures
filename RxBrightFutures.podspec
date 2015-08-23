@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.dependency "BrightFutures", :git => 'git@github.com:Thomvis/BrightFutures.git', :branch => 'swift-2.0'
-  s.dependency "RxSwift", :git => "git@github.com:kzaher/RxSwift.git", :branch => 'rxswift-2.0'
+  s.dependency = "BrightFutures"
+  s.dependency = "RxSwift"
 end
