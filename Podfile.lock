@@ -1,0 +1,32 @@
+PODS:
+  - BrightFutures (3.0.0-beta.3):
+    - Result (= 0.6-beta.1)
+  - Result (0.6-beta.1)
+  - RxSwift (1.9)
+
+DEPENDENCIES:
+  - BrightFutures (from `git@github.com:Thomvis/BrightFutures.git`, branch `swift-2.0`)
+  - RxSwift (from `git@github.com:kzaher/RxSwift.git`, branch `rxswift-2.0`)
+
+EXTERNAL SOURCES:
+  BrightFutures:
+    :branch: swift-2.0
+    :git: git@github.com:Thomvis/BrightFutures.git
+  RxSwift:
+    :branch: rxswift-2.0
+    :git: git@github.com:kzaher/RxSwift.git
+
+CHECKOUT OPTIONS:
+  BrightFutures:
+    :commit: 9257c5f487323b8e252881892d203d79c43e889e
+    :git: git@github.com:Thomvis/BrightFutures.git
+  RxSwift:
+    :commit: 75ef8e09037146ed7a1e64e042693de9e35b3568
+    :git: git@github.com:kzaher/RxSwift.git
+
+SPEC CHECKSUMS:
+  BrightFutures: 1088ccf030bb2feb0a4f6bd3bd50595238ec2681
+  Result: 6c990ec4a72470672f9fc5b6fef009da0f6f40d1
+  RxSwift: 204bf4262908521aa815ec850d93e87e9d635dd5
+
+COCOAPODS: 0.38.2
