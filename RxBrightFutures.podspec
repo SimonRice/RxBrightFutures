@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'RxBrightFutures'
-  s.version = '1.0'
+  s.version = '0.9'
   s.license = 'MIT'
   s.summary = 'RxSwift wrapper around the Future/Promise library BrightFutures'
   s.homepage = 'https://github.com/SideEffects-xyz/RxBrightFutures'
@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.dependency = "BrightFutures"
-  s.dependency = "RxSwift"
+  s.dependency = "BrightFutures", "~> 3.0.0-beta"
+  s.dependency = "RxSwift", "~> 2.0.0-alpha"
 end
