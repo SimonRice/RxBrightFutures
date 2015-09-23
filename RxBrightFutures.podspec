@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.license = 'MIT'
   s.summary = 'RxSwift wrapper around the Future/Promise library BrightFutures'
   s.homepage = 'https://github.com/SideEffects-xyz/RxBrightFutures'
-  s.authors = { 'Junior B.' => 'info@bonto.ch' }
+  s.authors = { 'Junior B.' => 'junior@bonto.ch' }
   s.source = { :git => 'https://github.com/SideEffects-xyz/RxBrightFutures.git', :tag => s.version }
 
   s.ios.deployment_target = '8.0'
