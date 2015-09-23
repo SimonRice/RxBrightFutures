@@ -14,7 +14,7 @@
 		CB40E42E1B8A0D1500D1DB5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB40E42D1B8A0D1500D1DB5A /* Assets.xcassets */; };
 		CB40E4311B8A0D1500D1DB5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB40E42F1B8A0D1500D1DB5A /* LaunchScreen.storyboard */; };
 		CB40E43C1B8A0D1500D1DB5A /* RxBrightFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40E43B1B8A0D1500D1DB5A /* RxBrightFuturesTests.swift */; };
-		CB40E4481B8A0D2900D1DB5A /* RxBrightFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40E4471B8A0D2900D1DB5A /* RxBrightFutures.swift */; };
+		CB5782681BB2C06300F65CA9 /* RxBrightFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5782671BB2C06300F65CA9 /* RxBrightFutures.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,7 @@
 		CB40E4371B8A0D1500D1DB5A /* RxBrightFuturesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxBrightFuturesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB40E43B1B8A0D1500D1DB5A /* RxBrightFuturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBrightFuturesTests.swift; sourceTree = "<group>"; };
 		CB40E43D1B8A0D1500D1DB5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB40E4471B8A0D2900D1DB5A /* RxBrightFutures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxBrightFutures.swift; sourceTree = "<group>"; };
+		CB5782671BB2C06300F65CA9 /* RxBrightFutures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxBrightFutures.swift; path = Source/RxBrightFutures.swift; sourceTree = SOURCE_ROOT; };
 		DD2F2E3677B4E62F3F5F8102 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +118,7 @@
 		CB40E4461B8A0D2000D1DB5A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CB40E4471B8A0D2900D1DB5A /* RxBrightFutures.swift */,
+				CB5782671BB2C06300F65CA9 /* RxBrightFutures.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -282,9 +282,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5782681BB2C06300F65CA9 /* RxBrightFutures.swift in Sources */,
 				CB40E4291B8A0D1500D1DB5A /* ViewController.swift in Sources */,
 				CB40E4271B8A0D1500D1DB5A /* AppDelegate.swift in Sources */,
-				CB40E4481B8A0D2900D1DB5A /* RxBrightFutures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
