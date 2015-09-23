@@ -8,11 +8,12 @@
 
 import RxSwift
 import BrightFutures
+import Result
 
 extension Future {
 
     /**
-    Creates and `Observable<T>` from a `Future<T>`
+    Creates an `Observable<T>` from a `Future<T>`.
     
     - returns: An `Observable` of type `T`
     */
@@ -21,10 +22,10 @@ extension Future {
             self.onComplete() { value in
                 switch(value) {
                 case .Success(let v):
-                    sendNext(observer, v)
-                    sendCompleted(observer)
+                    observer.on(.Next(v))
+                    observer.on(.Completed)
                 case .Failure(let e):
-                    sendError(observer, e)
+                    observer.on(.Error(e))
                 }
             }
             return AnonymousDisposable {}
@@ -36,7 +37,7 @@ extension Future {
 extension Promise {
     
     /**
-    Creates and `Observable<T>` from a `Promise<T>`
+    Creates an `Observable<T>` from a `Promise<T>`.
     
     - returns: An `Observable` of type `T`
     */
@@ -45,13 +46,47 @@ extension Promise {
             self.future.onComplete() { value in
                 switch(value) {
                 case .Success(let v):
-                    sendNext(observer, v)
-                    sendCompleted(observer)
+                    observer.on(.Next(v))
+                    observer.on(.Completed)
                 case .Failure(let e):
-                    sendError(observer, e)
+                    observer.on(.Error(e))
                 }
             }
             return AnonymousDisposable {}
         }
+    }
+    
+    /**
+    Creates a bidirectional `Subject<T>` from a `Promise<T>`.
+    Completing the promise will send the completion message to the subject,
+    viceversa completing the promise will complete the subject.
+    
+    - returns: A `Subject` of type `T`
+    */
+    func rx_subject() -> BehaviorSubject<T?> {
+        let subject = BehaviorSubject<T?>(value: nil)
+        
+        self.future.onComplete() { value in
+            switch(value) {
+            case .Success(let v):
+                subject.on(.Next(v))
+                subject.on(.Completed)
+            case .Failure(let e):
+                subject.on(.Error(e))
+            }
+        }
+        
+        subject.subscribeNext() { [weak self] v in
+            if let uv = v {
+                self?.trySuccess(uv)
+            }
+        }
+        
+        subject.subscribeError() { [weak self] e in
+            self?.tryFailure(e as! E)
+            return
+        }
+        
+        return subject
     }
 }
