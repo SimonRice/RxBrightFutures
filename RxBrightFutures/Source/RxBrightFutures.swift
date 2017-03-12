@@ -14,79 +14,77 @@ extension Future {
 
     /**
     Creates an `Observable<T>` from a `Future<T>`.
-    
+
     - returns: An `Observable` of type `T`
     */
     func rx_observable() -> Observable<T> {
-        return create() { observer in
+        return Observable.create() { observer in
             self.onComplete() { value in
                 switch(value) {
-                case .Success(let v):
-                    observer.on(.Next(v))
-                    observer.on(.Completed)
-                case .Failure(let e):
-                    observer.on(.Error(e))
+                case .success(let v):
+                    observer.on(.next(v))
+                    observer.on(.completed)
+                case .failure(let e):
+                    observer.on(.error(e))
                 }
             }
-            return AnonymousDisposable {}
+            return Disposables.create()
         }
     }
-    
+
 }
 
 extension Promise {
-    
+
     /**
     Creates an `Observable<T>` from a `Promise<T>`.
-    
+
     - returns: An `Observable` of type `T`
     */
     func rx_observable() -> Observable<T> {
-        return create() { observer in
+        return Observable.create() { observer in
             self.future.onComplete() { value in
                 switch(value) {
-                case .Success(let v):
-                    observer.on(.Next(v))
-                    observer.on(.Completed)
-                case .Failure(let e):
-                    observer.on(.Error(e))
+                case .success(let v):
+                    observer.on(.next(v))
+                    observer.on(.completed)
+                case .failure(let e):
+                    observer.on(.error(e))
                 }
             }
-            return AnonymousDisposable {}
+            return Disposables.create()
         }
     }
-    
+
     /**
     Creates a bidirectional `Subject<T>` from a `Promise<T>`.
     Completing the promise will send the completion message to the subject,
     viceversa completing the promise will complete the subject.
-    
+
     - returns: A `Subject` of type `T`
     */
     func rx_subject() -> BehaviorSubject<T?> {
         let subject = BehaviorSubject<T?>(value: nil)
-        
+
         self.future.onComplete() { value in
             switch(value) {
-            case .Success(let v):
-                subject.on(.Next(v))
-                subject.on(.Completed)
-            case .Failure(let e):
-                subject.on(.Error(e))
+            case .success(let v):
+                subject.on(.next(v))
+                subject.on(.completed)
+            case .failure(let e):
+                subject.on(.error(e))
             }
         }
-        
-        subject.subscribeNext() { [weak self] v in
-            if let uv = v {
+
+        let _ = subject.subscribe { [weak self] event in
+            if case .next(let v) = event, let uv = v {
                 self?.trySuccess(uv)
+            } else if case .error(let e) = event {
+                self?.tryFailure(e as! E)
             }
-        }
-        
-        subject.subscribeError() { [weak self] e in
-            self?.tryFailure(e as! E)
             return
         }
-        
+
         return subject
     }
 }

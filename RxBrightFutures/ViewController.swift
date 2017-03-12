@@ -13,12 +13,13 @@ import Result
 
 class ViewController: UIViewController {
 
-    let sourceStringURL = "http://api.fixer.io/latest?base=EUR&symbols=USD"
-    
+    private let disposeBag = DisposeBag()
+    private let sourceStringURL = "http://api.fixer.io/latest?base=EUR&symbols=USD"
+
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
     @IBOutlet weak var convertBtn: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,22 +29,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - UI Actions
-    @IBAction func convertPressed(sender: UIButton) {
-        let stringURL = "http://api.fixer.io/latest?base=CHF&symbols=USD"
-        
-        let url = NSURL(string: stringURL)!
-        let request = NSURLRequest(URL: url)
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: config)
-        
-        let networkPromise = Promise<NSData, NSError>()
-        
-        let task : NSURLSessionDataTask = session.dataTaskWithRequest(request) { (data, response, error) in
-        
+    @IBAction func convertPressed(_ sender: UIButton) {
+        let url = URL(string: sourceStringURL)!
+        let request = URLRequest(url: url)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+
+        let networkPromise = Promise<Data, NSError>()
+
+        let task : URLSessionDataTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
+
             if let e = error {
-                networkPromise.tryFailure(e)
+                networkPromise.tryFailure(e as NSError)
             } else {
                 if let d = data {
                     networkPromise.trySuccess(d)
@@ -51,50 +50,48 @@ class ViewController: UIViewController {
                     networkPromise.tryFailure(NSError(domain: "xyz.sideeffects", code: -1, userInfo: nil))
                 }
             }
-        
-        }
-        
+
+        })
+
         networkPromise.future.flatMap() { value in
             return self.deserializeData(value)
-        }.rx_observable().subscribeNext() { json in
-            self.toTextField.text = self.processData(json)
-        }
-    
+        }.rx_observable().subscribe { event in
+            if case .next(let json) = event {
+                self.toTextField.text = self.processData(json)
+            }
+        }.addDisposableTo(disposeBag)
+
         task.resume()
-    
+
     }
 
     // MARK: - Functions
-    
-    func displayError(e: NSError) {
-        let alert = UIAlertController(title: "Error", message: e.localizedDescription, preferredStyle: .Alert)
-        self.presentViewController(alert, animated: true, completion: nil)
+
+    func displayError(_ e: NSError) {
+        let alert = UIAlertController(title: "Error", message: e.localizedDescription, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
     }
-    
-    func deserializeData(data: NSData) -> Result<Dictionary<String, AnyObject>, NSError> {
+
+    func deserializeData(_ data: Data) -> Result<Dictionary<String, Any>, NSError> {
         do {
-            let dict = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! Dictionary<String, AnyObject>
+            let dict = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Any>
             return Result(value: dict)
         } catch (let e as NSError) {
             return Result(error: e)
         }
     }
 
-    func processData(dict: Dictionary<String, AnyObject>) -> String {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .CurrencyStyle
+    func processData(_ dict: Dictionary<String, Any>) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
         let valDict = dict["rates"] as! Dictionary<String, AnyObject>
         let value = valDict["USD"] as? Float
-        let fromValue = NSNumberFormatter().numberFromString(self.fromTextField.text!)?.floatValue
-        
+        let fromValue = NumberFormatter().number(from: self.fromTextField.text!)?.floatValue
+
         if let v = value, let fv = fromValue {
-            return formatter.stringFromNumber(v*fv)!
+            return formatter.string(from: NSNumber(value: v * fv))!
         }
-        
+
         return "invalid input"
     }
-
-
-
 }
-
