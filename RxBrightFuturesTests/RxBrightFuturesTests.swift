@@ -6,30 +6,38 @@
 //  Copyright © 2015 SideEffects.xyz. All rights reserved.
 //
 
+import BrightFutures
+import Result
+import RxBlocking
+import RxTest
 import XCTest
 
+@testable import RxBrightFutures
+
 class RxBrightFuturesTests: XCTestCase {
+    func testFirstSingleValueFuture() {
+        do {
+            let result = try Future<Int, NoError>(value: 10)
+                .rx_observable()
+                .toBlocking()
+                .first()!
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            XCTAssertEqual(result, 10)
+        } catch let error {
+            XCTFail(String(describing: error))
         }
     }
 
+    func testLastSingleValueFuture() {
+        do {
+            let result = try Future<Int, NoError>(value: 10)
+                .rx_observable()
+                .toBlocking()
+                .last()!
+
+            XCTAssertEqual(result, 10)
+        } catch let error {
+            XCTFail(String(describing: error))
+        }
+    }
 }

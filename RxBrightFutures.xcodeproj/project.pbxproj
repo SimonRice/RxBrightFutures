@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143FD7180C78A6018BBBE4C3 /* Pods_RxBrightFuturesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD91680A8E64895D5528EBC1 /* Pods_RxBrightFuturesTests.framework */; };
+		4952E5A26CC44159A7842A58 /* Pods_RxBrightFutures_RxBrightFuturesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4423FBCED04DBD8951588E7 /* Pods_RxBrightFutures_RxBrightFuturesTests.framework */; };
 		C9E9151AC92946241B8454E6 /* Pods_RxBrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593D85F8C9A56A5C3D1DBF3E /* Pods_RxBrightFutures.framework */; };
 		CB40E4271B8A0D1500D1DB5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40E4261B8A0D1500D1DB5A /* AppDelegate.swift */; };
 		CB40E4291B8A0D1500D1DB5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40E4281B8A0D1500D1DB5A /* ViewController.swift */; };
@@ -28,11 +30,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0CAB2E39D6C7422AC7DCA6 /* Pods-RxBrightFutures-RxBrightFuturesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBrightFutures-RxBrightFuturesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBrightFutures-RxBrightFuturesTests/Pods-RxBrightFutures-RxBrightFuturesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0E275BA8AF0C2D086B16312C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2539DF9A552290A5E1FF879C /* Pods-RxBrightFuturesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBrightFuturesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBrightFuturesTests/Pods-RxBrightFuturesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C3652841C55F5C2BFAC5D33 /* Pods-RxBrightFutures-RxBrightFuturesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBrightFutures-RxBrightFuturesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBrightFutures-RxBrightFuturesTests/Pods-RxBrightFutures-RxBrightFuturesTests.release.xcconfig"; sourceTree = "<group>"; };
 		564B410DC60352B760F30205 /* Pods-RxBrightFutures.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBrightFutures.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBrightFutures/Pods-RxBrightFutures.debug.xcconfig"; sourceTree = "<group>"; };
+		590AF2363E8E8555EA992E19 /* Pods-RxBrightFuturesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBrightFuturesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBrightFuturesTests/Pods-RxBrightFuturesTests.release.xcconfig"; sourceTree = "<group>"; };
 		593D85F8C9A56A5C3D1DBF3E /* Pods_RxBrightFutures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBrightFutures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CAF63B3269ABD7A649D432 /* Pods-RxBrightFutures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBrightFutures.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBrightFutures/Pods-RxBrightFutures.release.xcconfig"; sourceTree = "<group>"; };
 		B94500470BEF67E49A844B58 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BD91680A8E64895D5528EBC1 /* Pods_RxBrightFuturesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBrightFuturesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB40E4231B8A0D1400D1DB5A /* RxBrightFutures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxBrightFutures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB40E4261B8A0D1500D1DB5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB40E4281B8A0D1500D1DB5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +51,7 @@
 		CB40E43B1B8A0D1500D1DB5A /* RxBrightFuturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBrightFuturesTests.swift; sourceTree = "<group>"; };
 		CB40E43D1B8A0D1500D1DB5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB5782671BB2C06300F65CA9 /* RxBrightFutures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxBrightFutures.swift; path = Source/RxBrightFutures.swift; sourceTree = SOURCE_ROOT; };
+		D4423FBCED04DBD8951588E7 /* Pods_RxBrightFutures_RxBrightFuturesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBrightFutures_RxBrightFuturesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2F2E3677B4E62F3F5F8102 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143FD7180C78A6018BBBE4C3 /* Pods_RxBrightFuturesTests.framework in Frameworks */,
+				4952E5A26CC44159A7842A58 /* Pods_RxBrightFutures_RxBrightFuturesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +83,10 @@
 				DD2F2E3677B4E62F3F5F8102 /* Pods.release.xcconfig */,
 				564B410DC60352B760F30205 /* Pods-RxBrightFutures.debug.xcconfig */,
 				74CAF63B3269ABD7A649D432 /* Pods-RxBrightFutures.release.xcconfig */,
+				2539DF9A552290A5E1FF879C /* Pods-RxBrightFuturesTests.debug.xcconfig */,
+				590AF2363E8E8555EA992E19 /* Pods-RxBrightFuturesTests.release.xcconfig */,
+				0D0CAB2E39D6C7422AC7DCA6 /* Pods-RxBrightFutures-RxBrightFuturesTests.debug.xcconfig */,
+				4C3652841C55F5C2BFAC5D33 /* Pods-RxBrightFutures-RxBrightFuturesTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -133,6 +147,8 @@
 			children = (
 				0E275BA8AF0C2D086B16312C /* Pods.framework */,
 				593D85F8C9A56A5C3D1DBF3E /* Pods_RxBrightFutures.framework */,
+				BD91680A8E64895D5528EBC1 /* Pods_RxBrightFuturesTests.framework */,
+				D4423FBCED04DBD8951588E7 /* Pods_RxBrightFutures_RxBrightFuturesTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB40E4431B8A0D1500D1DB5A /* Build configuration list for PBXNativeTarget "RxBrightFuturesTests" */;
 			buildPhases = (
+				D2537A6480F42BAF79113DFE /* [CP] Check Pods Manifest.lock */,
 				CB40E4331B8A0D1500D1DB5A /* Sources */,
 				CB40E4341B8A0D1500D1DB5A /* Frameworks */,
 				CB40E4351B8A0D1500D1DB5A /* Resources */,
+				EC0863D519E21A825950C1AD /* [CP] Embed Pods Frameworks */,
+				4607A5185A935CC9C0926A17 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +287,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBrightFutures/Pods-RxBrightFutures-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4607A5185A935CC9C0926A17 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBrightFutures-RxBrightFuturesTests/Pods-RxBrightFutures-RxBrightFuturesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		99EAF44AD182F18408D87A1C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +315,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBrightFutures/Pods-RxBrightFutures-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2537A6480F42BAF79113DFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC0863D519E21A825950C1AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBrightFutures-RxBrightFuturesTests/Pods-RxBrightFutures-RxBrightFuturesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -450,6 +514,7 @@
 		};
 		CB40E4441B8A0D1500D1DB5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0CAB2E39D6C7422AC7DCA6 /* Pods-RxBrightFutures-RxBrightFuturesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RxBrightFuturesTests/Info.plist;
@@ -463,6 +528,7 @@
 		};
 		CB40E4451B8A0D1500D1DB5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C3652841C55F5C2BFAC5D33 /* Pods-RxBrightFutures-RxBrightFuturesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RxBrightFuturesTests/Info.plist;
