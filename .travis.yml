@@ -1,0 +1,19 @@
+language: objective-c
+osx_image: xcode8
+
+env:
+  global:
+    - COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=true
+
+before_install:
+  - travis_wait pod repo update --silent
+  - gem install xcpretty
+
+script:
+  - set -o pipefail && xcodebuild clean build test -workspace RxBrightFutures.xcworkspace -scheme RxBrightFutures -destination "platform=iOS Simulator,name=iPhone 6S" | xcpretty
+
+after_success:
+  - sleep 5
+
+notifications:
+  email: true

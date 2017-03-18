@@ -8,6 +8,7 @@ target 'RxBrightFutures' do
   pod 'RxSwift', "~> 3.0"
 
   target 'RxBrightFuturesTests' do
+    inherit! :search_paths
     pod 'RxTest', "~> 3.0"
   end
 end
