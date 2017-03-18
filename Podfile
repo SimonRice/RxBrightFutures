@@ -8,7 +8,6 @@ target 'RxBrightFutures' do
   pod 'RxSwift', "~> 3.0"
 
   target 'RxBrightFuturesTests' do
-    pod 'RxBlocking', "~> 3.0"
     pod 'RxTest', "~> 3.0"
   end
 end

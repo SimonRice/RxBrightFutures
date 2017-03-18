@@ -2,25 +2,21 @@ PODS:
   - BrightFutures (5.1.0):
     - Result (~> 3.0)
   - Result (3.1.0)
-  - RxBlocking (3.2.0):
-    - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
   - RxTest (3.2.0):
     - RxSwift (~> 3.0)
 
 DEPENDENCIES:
   - BrightFutures (~> 5.1)
-  - RxBlocking (~> 3.0)
   - RxSwift (~> 3.0)
   - RxTest (~> 3.0)
 
 SPEC CHECKSUMS:
   BrightFutures: 62aafb1a63520eda91c9286bf4be33e58e043938
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
-  RxBlocking: ec8ed471ba77b4fb98a2d60f1f8419b0b46eaa23
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   RxTest: 85fdd6f753e8e62635a58d37bbdd3ce7d5abbef3
 
-PODFILE CHECKSUM: cce1eccdd310de7c0622506cc4dd004442e3f68a
+PODFILE CHECKSUM: 4a5f099c64e259a534791749b0dda6504f383a9c
 
 COCOAPODS: 1.2.0
