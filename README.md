@@ -1,5 +1,7 @@
 # RxBrightFutures
 
+[![Travis CI](https://travis-ci.org/SideEffects-xyz/RxBrightFutures.svg?branch=master)](https://travis-ci.org/SideEffects-xyz/RxBrightFutures)
+
 RxBrightFutures is a tiny wrapper around [BrightFutures](https://github.com/Thomvis/BrightFutures) that allows transforming promises and futures into observables or subjects using a single function `rx_observable` or `rx_subject`.
 
 ## Example
