@@ -10,7 +10,7 @@ before_install:
   - gem install xcpretty
 
 script:
-  - set -o pipefail && xcodebuild clean build test -workspace RxBrightFutures.xcworkspace -scheme RxBrightFutures -destination "platform=iOS Simulator,name=iPhone 6S" | xcpretty
+  - set -o pipefail && xcodebuild test -workspace RxBrightFutures.xcworkspace -scheme RxBrightFutures -destination "platform=iOS Simulator,name=iPhone 6S" | xcpretty
 
 after_success:
   - sleep 5
