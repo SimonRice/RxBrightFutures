@@ -18,9 +18,9 @@ extension Future {
     - returns: An `Observable` of type `T`
     */
     func rx_observable() -> Observable<T> {
-        return Observable.create() { observer in
-            self.onComplete() { value in
-                switch(value) {
+        return Observable.create { observer in
+            self.onComplete { value in
+                switch value {
                 case .success(let v):
                     observer.on(.next(v))
                     observer.on(.completed)
@@ -42,9 +42,9 @@ extension Promise {
     - returns: An `Observable` of type `T`
     */
     func rx_observable() -> Observable<T> {
-        return Observable.create() { observer in
-            self.future.onComplete() { value in
-                switch(value) {
+        return Observable.create { observer in
+            self.future.onComplete { value in
+                switch value {
                 case .success(let v):
                     observer.on(.next(v))
                     observer.on(.completed)
@@ -66,8 +66,8 @@ extension Promise {
     func rx_subject() -> BehaviorSubject<T?> {
         let subject = BehaviorSubject<T?>(value: nil)
 
-        self.future.onComplete() { value in
-            switch(value) {
+        self.future.onComplete { value in
+            switch value {
             case .success(let v):
                 subject.on(.next(v))
                 subject.on(.completed)
@@ -80,6 +80,7 @@ extension Promise {
             if case .next(let v) = event, let uv = v {
                 self?.trySuccess(uv)
             } else if case .error(let e) = event {
+                // swiftlint:disable:next force_cast
                 self?.tryFailure(e as! E)
             }
             return
