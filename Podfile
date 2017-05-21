@@ -3,7 +3,7 @@ platform :ios, '8.0'
 
 use_frameworks!
 
-target 'RxBrightFutures' do
+target 'RxBrightFuturesExample' do
   pod 'BrightFutures', "~> 5.1"
   pod 'RxSwift', "~> 3.0"
 end

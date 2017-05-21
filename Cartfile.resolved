@@ -1,0 +1,3 @@
+github "ReactiveX/RxSwift" "3.4.1"
+github "Thomvis/BrightFutures" "5.2.0"
+github "antitypical/Result" "3.2.2"

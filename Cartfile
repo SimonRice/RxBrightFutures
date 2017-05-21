@@ -1,0 +1,2 @@
+github "Thomvis/BrightFutures" ~> 5.1
+github "ReactiveX/RxSwift" ~> 3.1
